@@ -47,14 +47,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="#ffff"
-                android:text="Obot Ernest - Android Developer"
                 android:gravity="center"
+                android:text="Obot Ernest - Android Developer"
                 android:layout_marginEnd="40dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginStart="45dp"
                 android:layout_centerHorizontal="true"
                 android:textSize="16sp"
                 android:layout_marginBottom="20dp" />
+
         </RelativeLayout>
         <RelativeLayout
             android:id="@+id/circleLayouts"
