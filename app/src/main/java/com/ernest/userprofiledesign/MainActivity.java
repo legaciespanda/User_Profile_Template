@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.username)
     TextView edt;
     @BindView(R.id.Iconimage2)
-    CircleImageView profile_image;
+    CircleImageView profile_images;
 
 
     @Override
@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         //edt.setText("Obot Ernest");
-        //profile_image.setImageResource(R.drawable.obot);
+        //profile_images.setImageResource(R.drawable.obot);
 
 
     }
