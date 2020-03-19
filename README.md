@@ -5,6 +5,11 @@
  This template was created with Androix-X.
  
 # Library used in this Template
-- Butterknife
-- Circle Image View
+- Butterknife (https://github.com/JakeWharton/butterknife)
+- Circle Image View https://github.com/hdodenhof/CircleImageView
 - Circle Button
+
+***
+#Screenshot
+
+![](images/image_design.png)
