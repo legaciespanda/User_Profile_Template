@@ -13,3 +13,6 @@
 #Screenshot
 
 ![](images/image_design.png)
+
+# Migration
+This project will be migrated to use Android Architecture Component soon MVVP Design Pattern.
