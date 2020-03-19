@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">User Profile Design</string>
+    <string name="Lbl_ContactUs_Privacy">Faq and contact us</string>
+    <string name="Lbl_NeedHelp">Need Help?</string>
+    <string name="Lbl_InviteFriendsToTheApp">Invite Friends to use app</string>
+    <string name="Lbl_InviteFriends">Invite Friends</string>
+    <string name="Lbl_About">About</string>
+    <string name="Lbl_Rate">Give your rate and feedback</string>
+    <string name="Lbl_Rate_Us">Rate</string>
+    <string name="Lbl_Update">Update</string>
+    <string name="Lbl_Version_update">Check for the latest version</string>
+    <string name="Lbl_Settings">Settings</string>
+    <string name="Lbl_EditProfile">Edit Profile</string>
+    <string name="Lbl_privacy_policy">App Terms and Policies</string>
+    <string name="Lbl_Privacy">Privacy Policy</string>
+</resources>

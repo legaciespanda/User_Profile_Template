@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:fillViewport="true"
+    android:fitsSystemWindows="true"
+    android:paddingBottom="40dp"
+    android:background="#ffff"
+    android:context = ".MainActivity"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            android:background="@drawable/half_circle"
+            />
+
+        <RelativeLayout
+            android:id="@+id/imagelayout"
+            android:paddingTop="3dp"
+            android:layout_below="@+id/headtitle"
+            android:layout_marginTop="2dp"
+            android:layout_centerHorizontal="true"
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:layout_height="wrap_content">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/Iconimage2"
+                android:layout_width="105dp"
+                android:layout_centerHorizontal="true"
+                android:layout_height="105dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginTop="55dp"
+                android:layout_marginStart="40dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/obot"
+                app:civ_border_width="5dp"
+                app:civ_border_color="@color/colorWhiteman"/>
+
+            <TextView
+                android:layout_below="@+id/Iconimage2"
+                android:id="@+id/username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#ffff"
+                android:text="Obot Ernest - Android Developer"
+                android:gravity="center"
+                android:layout_marginEnd="40dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="45dp"
+                android:layout_centerHorizontal="true"
+                android:textSize="16sp"
+                android:layout_marginBottom="20dp" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/circleLayouts"
+            android:layout_below="@+id/imagelayout"
+            android:layout_marginTop="-20dp"
+            android:layout_centerInParent="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <at.markushi.ui.CircleButton
+                android:id="@+id/BoostButton"
+                android:layout_marginTop="34dp"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                app:cb_color="#efefef"
+                android:layout_centerHorizontal="true"
+                android:elevation="5dp"
+                app:cb_pressedRingWidth="3dip"
+                android:src="@drawable/ic_about"
+                android:tint="@color/colorPrimary"
+                android:layout_marginEnd="10dp" />
+
+
+            <TextView
+                android:layout_below="@+id/BoostButton"
+                android:id="@+id/tv_Boost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Lbl_About"
+                android:textColor="#444"
+                android:gravity="center"
+                android:layout_marginTop="3dp"
+                android:layout_centerHorizontal="true"
+                android:textSize="12sp" />
+            <RelativeLayout
+                android:id="@+id/editprofile_button_rlayout"
+                android:clickable="true"
+                android:layout_marginStart="65dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_toEndOf="@+id/BoostButton"
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <at.markushi.ui.CircleButton
+                    android:id="@+id/EditButton"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    app:cb_color="#efefef"
+                    android:elevation="5dp"
+                    app:cb_pressedRingWidth="3dip"
+                    android:src="@drawable/ic_edit_btn"
+                    android:tint="@color/colorPrimary" />
+                <TextView
+                    android:layout_below="@+id/EditButton"
+                    android:id="@+id/tv_Edit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Lbl_EditProfile"
+                    android:textAlignment="center"
+                    android:textColor="#444"
+                    android:layout_marginTop="3dp"
+                    android:textSize="12sp" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/settings_button_rlayout"
+                android:clickable="true"
+                android:layout_marginEnd="65dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_toStartOf="@+id/Boost"
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <at.markushi.ui.CircleButton
+                    android:id="@+id/SettingsButton"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    app:cb_color="#efefef"
+                    android:elevation="5dp"
+                    app:cb_pressedRingWidth="3dip"
+                    android:src="@drawable/ic_settings_btn"
+                    android:tint="@color/colorPrimary" />
+                <TextView
+                    android:layout_below="@+id/SettingsButton"
+                    android:id="@+id/settingstextview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Lbl_Settings"
+                    android:textColor="#444"
+                    android:layout_marginStart="4dp"
+                    android:textAlignment="center"
+                    android:layout_marginTop="3dp"
+                    android:textSize="12sp" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+
+
+
+
+        <RelativeLayout
+            android:layout_below="@+id/circleLayouts"
+            android:id="@+id/StFirstLayout"
+            android:layout_width="match_parent"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="15dp"
+            android:padding="5dp"
+            android:clickable="true"
+            android:background="?attr/selectableItemBackground"
+            android:paddingEnd="10dp"
+            android:gravity="center_vertical"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/StImage1"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_rate"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="0dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="5dp"
+                android:scaleType="centerCrop" />
+            <TextView
+                android:id="@+id/St_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#444"
+                android:layout_toEndOf="@+id/StImage1"
+                android:layout_marginEnd="15dp"
+                android:text="@string/Lbl_Rate_Us"
+                android:gravity="start"
+                android:layout_marginStart="5dp"
+                android:textSize="14sp"
+                android:layout_marginBottom="0dp" />
+            <TextView
+                android:id="@+id/d_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#777"
+                android:layout_toEndOf="@+id/StImage1"
+                android:layout_marginEnd="15dp"
+                android:layout_marginTop="25dp"
+                android:text="@string/Lbl_Rate"
+                android:gravity="start"
+                android:layout_marginStart="5dp"
+                android:textSize="14sp"
+                android:layout_marginBottom="0dp" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/StsecoundLayout"
+            android:layout_below="@+id/StFirstLayout"
+            android:layout_width="match_parent"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="15dp"
+            android:padding="5dp"
+            android:clickable="true"
+            android:background="?attr/selectableItemBackground"
+            android:gravity="center_vertical"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/StImage2"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_invite_friend"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="0dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="5dp"
+                android:scaleType="centerCrop" />
+            <TextView
+                android:id="@+id/St_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#444"
+                android:layout_toEndOf="@+id/StImage2"
+                android:layout_marginEnd="15dp"
+                android:text="@string/Lbl_InviteFriends"
+                android:gravity="start"
+                android:layout_marginStart="5dp"
+                android:textSize="14sp"
+                android:layout_marginBottom="0dp" />
+            <TextView
+                android:id="@+id/d_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#777"
+                android:layout_toEndOf="@+id/StImage2"
+                android:layout_marginEnd="15dp"
+                android:layout_marginTop="25dp"
+                android:text="@string/Lbl_InviteFriendsToTheApp"
+                android:gravity="start"
+                android:layout_marginStart="5dp"
+                android:textSize="14sp"
+                android:layout_marginBottom="0dp" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/StthirdLayout"
+            android:layout_below="@+id/StsecoundLayout"
+            android:layout_width="match_parent"
+            android:clickable="true"
+            android:background="?attr/selectableItemBackground"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="15dp"
+            android:padding="5dp"
+            android:gravity="center_vertical"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/StImage3"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_help_outline"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="0dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="5dp"
+                android:scaleType="centerCrop" />
+            <TextView
+                android:id="@+id/St_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#444"
+                android:layout_toEndOf="@+id/StImage3"
+                android:layout_marginEnd="15dp"
+                android:text="@string/Lbl_NeedHelp"
+                android:gravity="start"
+                android:layout_marginStart="5dp"
+                android:textSize="14sp"
+                android:layout_marginBottom="0dp" />
+            <TextView
+                android:id="@+id/d_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#777"
+                android:layout_toEndOf="@+id/StImage3"
+                android:layout_marginEnd="15dp"
+                android:layout_marginTop="25dp"
+                android:text="@string/Lbl_ContactUs_Privacy"
+                android:gravity="start"
+                android:layout_marginStart="5dp"
+                android:textSize="14sp"
+                android:layout_marginBottom="0dp" />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/StFourthLayout"
+            android:layout_below="@+id/StthirdLayout"
+            android:layout_width="match_parent"
+            android:clickable="true"
+            android:background="?attr/selectableItemBackground"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="15dp"
+            android:padding="5dp"
+            android:gravity="center_vertical"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/StImage31"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_system_update"
+                android:tint="@color/colorPrimary"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="0dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="5dp"
+                android:scaleType="centerCrop" />
+            <TextView
+                android:id="@+id/St_31"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#444"
+                android:layout_toEndOf="@+id/StImage31"
+                android:layout_marginEnd="15dp"
+                android:text="@string/Lbl_Update"
+                android:gravity="start"
+                android:layout_marginStart="5dp"
+                android:textSize="14sp"
+                android:layout_marginBottom="0dp" />
+            <TextView
+                android:id="@+id/d_31"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#777"
+                android:layout_toEndOf="@+id/StImage31"
+                android:layout_marginEnd="15dp"
+                android:layout_marginTop="25dp"
+                android:text="@string/Lbl_Version_update"
+                android:gravity="start"
+                android:layout_marginStart="5dp"
+                android:textSize="14sp"
+                android:layout_marginBottom="0dp" />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/StFifthLayout"
+            android:layout_below="@+id/StFourthLayout"
+            android:layout_width="match_parent"
+            android:clickable="true"
+            android:background="?attr/selectableItemBackground"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="15dp"
+            android:padding="5dp"
+            android:gravity="center_vertical"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/StImage32"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_privacy"
+                android:tint="@color/colorPrimary"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="0dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="5dp"
+                android:scaleType="centerCrop" />
+            <TextView
+                android:id="@+id/St_32"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#444"
+                android:layout_toEndOf="@+id/StImage32"
+                android:layout_marginEnd="15dp"
+                android:text="@string/Lbl_Privacy"
+                android:gravity="start"
+                android:layout_marginStart="5dp"
+                android:textSize="14sp"
+                android:layout_marginBottom="0dp" />
+            <TextView
+                android:id="@+id/d_32"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#777"
+                android:layout_toEndOf="@+id/StImage32"
+                android:layout_marginEnd="15dp"
+                android:layout_marginTop="25dp"
+                android:text="@string/Lbl_privacy_policy"
+                android:gravity="start"
+                android:layout_marginStart="5dp"
+                android:textSize="14sp"
+                android:layout_marginBottom="0dp" />
+        </RelativeLayout>
+    </RelativeLayout>
+</androidx.core.widget.NestedScrollView>
+
