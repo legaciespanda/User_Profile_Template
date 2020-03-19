@@ -20,7 +20,6 @@
         <RelativeLayout
             android:id="@+id/imagelayout"
             android:paddingTop="3dp"
-            android:layout_below="@+id/headtitle"
             android:layout_marginTop="2dp"
             android:layout_centerHorizontal="true"
             android:layout_width="match_parent"
@@ -126,7 +125,6 @@
                 android:layout_marginEnd="65dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginStart="10dp"
-                android:layout_toStartOf="@+id/Boost"
                 android:gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
