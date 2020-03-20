@@ -13,4 +13,5 @@
     <string name="Lbl_EditProfile">Edit Profile</string>
     <string name="Lbl_privacy_policy">App Terms and Policies</string>
     <string name="Lbl_Privacy">Privacy Policy</string>
+    <string name="share_app_text">Please kindly share User Profile Template with your friends!</string>
 </resources>

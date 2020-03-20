@@ -3,8 +3,11 @@ package com.ernest.userprofiledesign.controller;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProviders;
 
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
@@ -46,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.Iconimage2)
     CircleImageView profile_images;
     private MainActivityViewModel mViewModel;
+    private static final String TAG = "MainActivity";
 
 
     @Override
@@ -99,6 +103,12 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 //code for rating
+                    final String appName = getApplicationContext().getPackageName();
+                    try {
+                        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + appName)));
+                    } catch (android.content.ActivityNotFoundException anfe) {
+                        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://play.google.com/store/apps/details?id=" + appName)));
+                    }
             }
         });
 
@@ -108,8 +118,14 @@ public class MainActivity extends AppCompatActivity {
         r2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 //code for inviting friends
+                //startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.play_more_apps))));
+                Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
+                sharingIntent.setType("text/plain");
+                sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "User Profile Template");
+                sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, getResources().getString(R.string.share_app_text));
+                startActivity(Intent.createChooser(sharingIntent, "Share User Profile Template via"));
+                Log.i(TAG, "App Shared");
             }
         });
 
