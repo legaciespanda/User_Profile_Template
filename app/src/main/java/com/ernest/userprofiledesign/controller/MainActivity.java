@@ -1,6 +1,7 @@
-package com.ernest.userprofiledesign;
+package com.ernest.userprofiledesign.controller;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProviders;
 
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -8,6 +9,9 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import com.ernest.userprofiledesign.R;
+import com.ernest.userprofiledesign.viewmodel.MainActivityViewModel;
 
 import at.markushi.ui.CircleButton;
 import butterknife.BindView;
@@ -41,13 +45,22 @@ public class MainActivity extends AppCompatActivity {
     TextView edt;
     @BindView(R.id.Iconimage2)
     CircleImageView profile_images;
+    private MainActivityViewModel mViewModel;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        /**
+         * initialized ButterKnife
+         */
         ButterKnife.bind(this);
         setContentView(R.layout.activity_main);
+
+        /**
+         * initialized ViewModel
+         */
+        mViewModel = ViewModelProviders.of(this).get(MainActivityViewModel.class);
         initRelative();
         initViews();
     }
