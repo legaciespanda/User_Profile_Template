@@ -3,8 +3,11 @@ package com.ernest.userprofiledesign.controller;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProviders;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -12,9 +15,13 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.ernest.userprofiledesign.R;
 import com.ernest.userprofiledesign.viewmodel.MainActivityViewModel;
+import com.github.javiersantos.appupdater.AppUpdater;
+import com.github.javiersantos.appupdater.enums.Display;
+import com.github.javiersantos.appupdater.enums.UpdateFrom;
 
 import at.markushi.ui.CircleButton;
 import butterknife.BindView;
@@ -67,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
         mViewModel = ViewModelProviders.of(this).get(MainActivityViewModel.class);
         initRelative();
         initViews();
+
     }
 
     private void initViews() {
@@ -77,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
                 //code for settings activity or fragment
                 //code for navigating to Settings Activity using intent
                 //replace this SettingsActivity.class with yours
-                Intent myIntent = new Intent(getBaseContext(),   SettingsActivity.class);
+                Intent myIntent = new Intent(getBaseContext(),   MainActivity.class);
                 startActivity(myIntent);
 
             }
@@ -90,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
                 //code for edit profile activity or fragment
                 //code for navigating to EditProfile Activity using intent
                 //replace this EditProfileActivty.class with yours
-                Intent myIntent = new Intent(getBaseContext(),   EditProfileActivty.class);
+                Intent myIntent = new Intent(getBaseContext(),   MainActivity.class);
                 startActivity(myIntent);
             }
         });
@@ -145,7 +153,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 //code for navigating to FAQ and Contact Us Activity using intent
                 //replace this ContactUsActivity.class with yours
-                Intent myIntent = new Intent(getBaseContext(),   ContactUsActivity.class);
+                Intent myIntent = new Intent(getBaseContext(),   MainActivity.class);
                 startActivity(myIntent);
             }
         });
@@ -158,6 +166,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 //code for update
+                checkForNetworkAndUpdate();
+
             }
         });
 
@@ -171,13 +181,46 @@ public class MainActivity extends AppCompatActivity {
                 //code for privacy policy activity, fragment or dialog
                 //code for navigating to privacy policy Activity using intent
                 //replace this PrivacyActivity.class with yours
-                Intent myIntent = new Intent(getBaseContext(),   PrivacyActivity.class);
+                Intent myIntent = new Intent(getBaseContext(),   MainActivity.class);
                 startActivity(myIntent);
             }
         });
     }
 
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
 
+    private void checkForNetworkAndUpdate(){
+        //checking for internet connectivity
+        ConnectivityManager connMgr = (ConnectivityManager) this.getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
+        //if there is network access, make an update query to the backend
+        if (networkInfo != null && networkInfo.isConnected()) {
+
+            AppUpdater appUpdater = new AppUpdater(this);
+            appUpdater.setUpdateFrom(UpdateFrom.JSON)
+                    .setUpdateJSON("https://megtrix.com/update-changelog.json")
+                    .setDisplay(Display.DIALOG)
+                    .showAppUpdated(true)
+                    .setTitleOnUpdateAvailable("Update Available")
+                    //.setContentOnUpdateAvailable("Check out the latest version available of Profile Template App!")
+                    .setTitleOnUpdateNotAvailable("Update not available")
+                    .setContentOnUpdateNotAvailable("No update available. Check for updates again later!")
+                    .setButtonUpdate("Update now?")
+                    .setButtonDismiss("Maybe later")
+                    .setButtonDoNotShowAgain(null)
+                    .showEvery(3)
+                    .setIcon(R.drawable.ic_system_update)
+                    .setCancelable(false)
+                    .start();
+        } else {
+            //if there is no network, show toast to users
+            Toast toast = Toast.makeText(this,"Please Connect to Internet to Check for Latest Updates",Toast.LENGTH_SHORT);
+            toast.show();
+        }
+    }
 
 }

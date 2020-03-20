@@ -36,7 +36,6 @@ dependencies {
     implementation 'de.hdodenhof:circleimageview:3.1.0'
     implementation 'com.jakewharton:butterknife:10.2.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.1'
-    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 
     //def lifecycle_version = "2.2.0"
 
@@ -44,11 +43,9 @@ dependencies {
     implementation "android.arch.lifecycle:extensions:$lifecycle_version"
     annotationProcessor "android.arch.lifecycle:compiler:$lifecycle_version"
 
-    // Saved state module for ViewModel
-    //implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:$lifecycle_version"
-    // ViewModel
-    //implementation "androidx.lifecycle:lifecycle-viewmodel:$lifecycle_version"
-    // Annotation processor
-    //annotationProcessor "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
+    //AppUpdater
+    implementation 'com.github.javiersantos:AppUpdater:2.7'
+
+
 
 }
