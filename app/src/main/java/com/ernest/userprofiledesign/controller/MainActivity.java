@@ -75,6 +75,11 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 //code for settings activity or fragment
+                //code for navigating to Settings Activity using intent
+                //replace this SettingsActivity.class with yours
+                Intent myIntent = new Intent(getBaseContext(),   SettingsActivity.class);
+                startActivity(myIntent);
+
             }
         });
 
@@ -83,6 +88,10 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 //code for edit profile activity or fragment
+                //code for navigating to EditProfile Activity using intent
+                //replace this EditProfileActivty.class with yours
+                Intent myIntent = new Intent(getBaseContext(),   EditProfileActivty.class);
+                startActivity(myIntent);
             }
         });
 
@@ -101,7 +110,6 @@ public class MainActivity extends AppCompatActivity {
         rl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 //code for rating
                     final String appName = getApplicationContext().getPackageName();
                     try {
@@ -135,8 +143,10 @@ public class MainActivity extends AppCompatActivity {
         r3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                //code for FAQ and Contact Us Activity
+                //code for navigating to FAQ and Contact Us Activity using intent
+                //replace this ContactUsActivity.class with yours
+                Intent myIntent = new Intent(getBaseContext(),   ContactUsActivity.class);
+                startActivity(myIntent);
             }
         });
 
@@ -159,6 +169,10 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 //code for privacy policy activity, fragment or dialog
+                //code for navigating to privacy policy Activity using intent
+                //replace this PrivacyActivity.class with yours
+                Intent myIntent = new Intent(getBaseContext(),   PrivacyActivity.class);
+                startActivity(myIntent);
             }
         });
     }
