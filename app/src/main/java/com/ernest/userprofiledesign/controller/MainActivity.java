@@ -200,8 +200,13 @@ public class MainActivity extends AppCompatActivity {
         //if there is network access, make an update query to the backend
         if (networkInfo != null && networkInfo.isConnected()) {
 
+            /**
+             * initialized AppUpdater
+             */
             AppUpdater appUpdater = new AppUpdater(this);
             appUpdater.setUpdateFrom(UpdateFrom.JSON)
+                    //When using the JSON source you must
+                    // upload a .json file somewhere on the Internet following the structure
                     .setUpdateJSON("https://megtrix.com/update-changelog.json")
                     .setDisplay(Display.DIALOG)
                     .showAppUpdated(true)
